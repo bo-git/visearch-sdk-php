@@ -147,15 +147,15 @@ class ViSearch extends ViSearchBaseRequest
             throw new ViSearchException("Please input a valid local image file path or http image url or im_id");
 
         $params = array(
-            'score'=> $score,
-            'page'=> $page,
-            'limit' => $limit,
-            'fq' => $fq,
-            'fl' => $fl,
-            'score_max'=>$score_max,
-            'score_min'=>$score_min,
-            'get_all_fl'=>$get_all_fl,
-            'detection'=>$detection
+            'score'=> $mergedParams['score'],
+            'page'=> $mergedParams['page'],
+            'limit' => $mergedParams['limit'],
+            'fq' => $mergedParams['fq'],
+            'fl' => $mergedParams['fl'],
+            'score_max'=>$mergedParams['score_max'],
+            'score_min'=>$mergedParams['score_min'],
+            'get_all_fl'=>$mergedParams['get_all_fl'],
+            'detection'=>$mergedParams['detection']
         );
 
         $box = $image->get_box();
